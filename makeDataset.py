@@ -3,6 +3,7 @@ import urllib
 import re
 import csv
 import numpy as np
+from itertools import islice
 
 categories = []
 
@@ -56,6 +57,16 @@ def populateDataset():
     movies = []
     years = []
     actors = []
+
+    genres.append("genre")
+    songNames.append("songName")
+    singers.append("singer")
+    musicDirectors.append("musicDirector")
+    lyricists.append("lyricist")
+    movies.append("movie")
+    years.append("year")
+    actors.append("actors")
+
     for categoryNo in range(0, len(categories)):
         url = 'http://www.hindigeetmala.net' + categories[categoryNo]
         # url = 'http://www.hindigeetmala.net' + categories[0]
@@ -147,7 +158,7 @@ def populateDataset():
 
                 print("************************")
 
-    finalSongsList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years, actors)
+    finalSongsList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years)
     with open('songs.csv', 'w', newline='') as fp:
         a = csv.writer(fp, delimiter=',')
         a.writerows(finalSongsList)
@@ -163,7 +174,7 @@ def sortEntriesBy(item):
     actors = []
     with open("songs.csv", "r") as file:
         reader = csv.reader(file)
-        for row in reader:
+        for row in islice(reader, 1, None):
             genres.append(row[0])
             songNames.append(row[1])
             singers.append(row[2])
@@ -217,7 +228,7 @@ def sortEntriesBy(item):
     years = np.array(years)[idx]
     actors = np.array(actors)[idx]
 
-    printList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years, actors)
+    printList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years)
     # print(*list(printList), sep = '\n')
 
     uniqueItems, itemCounts = np.unique(item, return_counts=True)
@@ -231,7 +242,7 @@ lyricists = []
 movies = []
 years = []
 actors = []
-# populateDataset()
+populateDataset()
 # sortEntriesBy("genres")
 # print("************************")
 # sortEntriesBy("songNames")
