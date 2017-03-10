@@ -10,6 +10,7 @@ categories = []
 def getItem(item):
     song = item.split("<span itemprop=\"name\">", 1)[1]
     item = re.split("<", song)[0]
+    item = removeCommas(item)
     return item, song
 
 def getSinger(singer):
@@ -18,7 +19,8 @@ def getSinger(singer):
     comma = re.split("<",comma)[0]
     if comma == ",":
         singerNext, song = getSinger(song)
-        singer = singer + "," + singerNext
+        singer = singer + "*" + singerNext
+    # singer = removeCommas(singer)
     return singer, song
 
 def getActors(actor):
@@ -30,6 +32,9 @@ def getActors(actor):
         actorNext, song = getActors(song)
         actor = actor + actorNext
     return actor, song
+
+def removeCommas(data):
+    return data.replace(",", "")
 
 def populateDataset():
     for pageNo in range(1, 4):
@@ -106,6 +111,7 @@ def populateDataset():
 
                 song = re.split("<span itemprop=\"name\"> ", songsStrs[x])[1]
                 songName = re.split(" <", song)[0]
+                songName = removeCommas(songName)
                 print(songName)
                 songNames.append(songName)
 
@@ -153,8 +159,8 @@ def populateDataset():
                     actor, song = getActors(actor)
                 except:
                     actor = "NotFound"
-                print(actor)
-                actors.append(actor)
+                # print(actor)
+                # actors.append(actor)
 
                 print("************************")
 
@@ -182,7 +188,7 @@ def sortEntriesBy(item):
             lyricists.append(row[4])
             movies.append(row[5])
             years.append(int(row[6]))
-            actors.append(row[7])
+            # actors.append(row[7])
 
     genres = np.array(genres)
     songNames = np.array(songNames)
@@ -226,7 +232,7 @@ def sortEntriesBy(item):
     lyricists = np.array(lyricists)[idx]
     movies = np.array(movies)[idx]
     years = np.array(years)[idx]
-    actors = np.array(actors)[idx]
+    # actors = np.array(actors)[idx]
 
     printList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years)
     # print(*list(printList), sep = '\n')
