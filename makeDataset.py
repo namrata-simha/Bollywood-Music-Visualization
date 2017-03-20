@@ -62,6 +62,7 @@ def populateDataset():
     movies = []
     years = []
     actors = []
+    youtubeLinks = []
 
     genres.append("genre")
     songNames.append("songName")
@@ -71,6 +72,7 @@ def populateDataset():
     movies.append("movie")
     years.append("year")
     actors.append("actors")
+    youtubeLinks.append("youtubeLinks")
 
     for categoryNo in range(0, len(categories)):
         url = 'http://www.hindigeetmala.net' + categories[categoryNo]
@@ -106,6 +108,8 @@ def populateDataset():
                 print("Page number: "+str(pageNo))
                 genre = re.split("/category/", categories[categoryNo])[1]
                 genre = re.split("\.php", genre)[0]
+                genre = genre.replace("_", " ")
+                genre = genre.title()
                 print(genre)
                 genres.append(genre)
 
@@ -162,9 +166,19 @@ def populateDataset():
                 # print(actor)
                 # actors.append(actor)
 
+                try:
+                    youtube = songsStrs[x].split("src=\"", 1)[1]
+                    # song = youtube.split("<span itemprop=\"name\">", 1)[1]
+                    youtube = re.split("\"", youtube)[0]
+                    # youtube, song = getItem(youtube)
+                except:
+                    youtube = "NotFound"
+                print(youtube)
+                youtubeLinks.append(youtube)
+
                 print("************************")
 
-    finalSongsList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years)
+    finalSongsList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years, youtubeLinks)
     with open('songs.csv', 'w', newline='') as fp:
         a = csv.writer(fp, delimiter=',')
         a.writerows(finalSongsList)
@@ -233,8 +247,9 @@ def sortEntriesBy(item):
     movies = np.array(movies)[idx]
     years = np.array(years)[idx]
     # actors = np.array(actors)[idx]
+    youtubeLinks = np.array(youtubeLinks)[idx]
 
-    printList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years)
+    printList = zip(genres, songNames, singers, musicDirectors, lyricists, movies, years, youtubeLinks)
     # print(*list(printList), sep = '\n')
 
     uniqueItems, itemCounts = np.unique(item, return_counts=True)
@@ -248,6 +263,7 @@ lyricists = []
 movies = []
 years = []
 actors = []
+youtubeLinks = []
 populateDataset()
 # sortEntriesBy("genres")
 # print("************************")
