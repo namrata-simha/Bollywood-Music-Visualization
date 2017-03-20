@@ -15,20 +15,13 @@ Files in Submission.zip:
 	>Please retain songs.csv in the same file as BollywoodViz.jar to ensure that the code runs.
 
 >B. Data
-	>1.Initial dataset – Not used anymore in this project.
-		>RawData contains the data extracted from the API.
-		>Script Used to make this dataset
-			>webCrawl.py is the script initially used for data wrangling from the API that we had selected.
-		>songs.csv and movies.csv are the datasets generated
-	>2.Final dataset – 
-		>songs.csv – (data) This is the dataset used in this project. The data we have used is from the website http://www.hindigeetmala.net/category/ which we have scraped using the makeDataset.py code in the Scripts folder.
+	>songs.csv – (data) This is the dataset used in this project. The data we have used is from the website http://www.hindigeetmala.net/category/ which we have scraped using the makeDataset.py code in the Scripts folder.
 
->C. Scripts
+>C. Scripts : We haven't created this folder here, it is only in the submission. Here the scripts are directly in the Bollywood-Music-Visualization/getData and Bollywood-Music-Visualization folders.
 	>makeDataset.py - (script) This script was used to crawl the web and make the dataset used in this project.
-	>BollywoodViz (folder with scripts): is the project we used to create the visualization. Please look under the src folder to find the code used.
+	>vizApplet.form and vizApplet.java are the files used to create the UI.
 
 >D. DataW
-	>DataW.tex is the editable version of the final project report.
 	>DataW.pdf is the final project report.
 
 >E. Contribution
