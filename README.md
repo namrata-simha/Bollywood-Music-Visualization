@@ -1,10 +1,9 @@
 # Visualizing Bollywood music from one's favourite artist. #
 
-*CMPS 263 Bollywood Visualization project team members:
-
-Namrata Simha (npsimha@ucsc.edu)
-Madhu Shivashankaraiah (mshivash@ucsc.edu)
-Fa Chang (fachang@ucsc.edu)*
+*CMPS 263 Bollywood Visualization project team members:*
+*Namrata Simha (npsimha@ucsc.edu)*
+*Madhu Shivashankaraiah (mshivash@ucsc.edu)*
+*Fa Chang (fachang@ucsc.edu)*
 
 In this Project have visualized the different genres of music in Bollywood and have retrieved different songs from different artists, i.e. currently only music composers of the songs in these movies. These songs are from the many types of music that have been around for the past 50 years in the Indian Film Industry.
 
