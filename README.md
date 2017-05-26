@@ -1,4 +1,4 @@
-#Visualizing Bollywood music from one's favourite artist.#
+# Visualizing Bollywood music from one's favourite artist. #
 
 *CMPS 263 Bollywood Visualization project team members:
 Namrata Simha (npsimha@ucsc.edu)
@@ -8,7 +8,7 @@ Fa Chang (fachang@ucsc.edu)*
 In this Project have visualized the different genres of music in Bollywood and have retrieved different songs from different artists, i.e. currently only music composers of the songs in these movies. These songs are from the many types of music that have been around for the past 50 years in the Indian Film Industry.
 
 
-##Files in Submission.zip:##
+## Files in Submission.zip: ##
 
 >A. Visualization
 	>BollywoodViz.jar - (executable jar file) Run this to see the visualization
@@ -27,7 +27,7 @@ In this Project have visualized the different genres of music in Bollywood and h
 >E. Contribution
 	>Contribution.docx is the file that contains information about the contribution of each team member.
 
-##Running instructions:##
+## Running instructions: ##
 > Make sure you have Java version 7 or up installed. Instructions for download and installation are available here: https://www.java.com/en/download/help/download_options.xml.
 Use the link to select your appropriate operating system and follow the instructions. Also make sure that you have installed Java SE Runtime Environment, the link for the most recent version 8 is: http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
 All other versions can be found at: http://www.oracle.com/technetwork/java/javase/downloads/index.html
