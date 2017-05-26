@@ -1,6 +1,7 @@
 # Visualizing Bollywood music from one's favourite artist. #
 
 *CMPS 263 Bollywood Visualization project team members:
+
 Namrata Simha (npsimha@ucsc.edu)
 Madhu Shivashankaraiah (mshivash@ucsc.edu)
 Fa Chang (fachang@ucsc.edu)*
